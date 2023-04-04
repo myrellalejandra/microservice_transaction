@@ -37,5 +37,13 @@ public class TransactionService implements ITransactionService {
 	public Flux<Transaction> findByDni(Long accountNumber) {
 		return transactionRepository.getAllByDni(accountNumber);
 	}
+	
+	public  Mono<Transaction> getBalanceByAccount(Long accountNumber){
+		return transactionRepository.getBalanceByAccount(accountNumber);
+	}
+	  
+	public Mono<Transaction> getBalanceByDni(Long dni){
+		return transactionRepository.getBalanceByDni(dni);
+	}
 
 }
